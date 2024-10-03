@@ -8,19 +8,21 @@ const [city, setCity]  = useState(" ");
 const [display, setDisplay] = useState(false);
 const [weather, setWeather] = useState({})
 
-function handleSubmit(event) {
+function handleSubmit(event: { preventDefault: () => void; }) {
   event.preventDefault();
   let apiKey= "97bed167ec49bff56e6c1b63daef9c86";
   let url= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
   axios.get(url).then(displayWeather);
  }
 
-  function updateCity(event) {
+  function updateCity(event: { preventDefault: () => void; target: { value: React.SetStateAction<string>; }; }) {
     event.preventDefault();
     setCity (event.target.value);
   }
 
-  function displayWeather(response) {
+  function displayWeather(response: { data: { main: { temp: any; humidity: any; wind: any; }; weather: {
+    description: any; icon: any; 
+}[]; }; }) {
     setDisplay(true);
     setWeather ({
       temperature: response.data.main.temp,
