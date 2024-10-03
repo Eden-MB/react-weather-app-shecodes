@@ -6,7 +6,7 @@ export default function App() {
 
 const [city, setCity]  = useState(" ");
 const [display, setDisplay] = useState(false);
-const [weather, setWeather] = useState({})
+const [weather, setWeather] = useState({ })
 
 function handleSubmit(event: { preventDefault: () => void; }) {
   event.preventDefault();
@@ -24,8 +24,9 @@ function handleSubmit(event: { preventDefault: () => void; }) {
     description: any; icon: any; 
 }[]; }; }) {
     setDisplay(true);
-    setWeather ({
-      temperature: response.data.main.temp,
+    setWeather (
+      {
+      temperature: (response.data.main.temp),
       humidity: response.data.main.humidity, 
       wind: response.data.main.wind,
       description: response.data.weather[0].description,
@@ -49,13 +50,12 @@ function handleSubmit(event: { preventDefault: () => void; }) {
       <div >
         {form}
         <ul className="newForm2">
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}km/h</li>
-            <img src={weather.icon} alt={weather.description} />
+          <li>Temperature: Math.round(weather.temperature)°C</li>
+          <li>Description: weather.description</li>
+          <li>Humidity: weather.humidity%</li>
+          <li>Wind: weather.wind km/h</li>
+           
         </ul>
-        l
       </div>
     );
   } else {
