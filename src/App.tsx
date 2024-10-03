@@ -6,7 +6,7 @@ export default function App() {
 
 const [city, setCity]  = useState(" ");
 const [display, setDisplay] = useState(false);
-const [weather, setWeather] = useState({ })
+const [, setWeather] = useState({ })
 
 function handleSubmit(event: { preventDefault: () => void; }) {
   event.preventDefault();
@@ -32,6 +32,8 @@ function handleSubmit(event: { preventDefault: () => void; }) {
       description: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     })
+
+    
   }
 
   let form = (
