@@ -2,7 +2,7 @@ body {
   background-color: rgb(252, 249, 246);
 }
 .newForm {
-  width: 400px;
+  width: 500px;
   padding: 40px;
  margin: 0 auto; 
  margin-top: 200px;
@@ -10,7 +10,7 @@ body {
  border-radius: 5px;
 }
 .newForm2 {
-  width: 400px;
+  width: 500px;
   padding: 40px;
  margin: auto; 
  margin-top: 2px;
@@ -44,4 +44,8 @@ li::marker {
 h1 {
   font-size: 40px;
   
+}
+
+p {
+  text-align: center;
 }

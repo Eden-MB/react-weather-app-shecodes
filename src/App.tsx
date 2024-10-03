@@ -6,7 +6,7 @@ export default function App() {
 
 const [city, setCity]  = useState(" ");
 const [display, setDisplay] = useState(false);
-const [weather, setWeather] = useState({})
+const [, setWeather] = useState({});
 
 function handleSubmit(event: { preventDefault: () => void; }) {
   event.preventDefault();
@@ -49,17 +49,22 @@ function handleSubmit(event: { preventDefault: () => void; }) {
       <div >
         {form}
         <ul className="newForm2">
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}km/h</li>
-            <img src={weather.icon} alt={weather.description} />
+          <li>Temperature: Math.round(weather.temperature)°C</li>
+          <li>Description: weather.description</li>
+          <li>Humidity: weather.humidity%</li>
+          <li>Wind: weather.windkm/h</li>
+        
         </ul>
-        l
+        <p className="">This project was coded by Eden and is open-sourced on <a href="https://github.com/Eden-MB/react-weather-app-shecodes/tree/main/src">GitHub and hosted on Netlify</a></p>
+
       </div>
     );
   } else {
-    return form;
+    return (
+      <div>
+        {form}
+        <p className="">This project was coded by Eden and is open-sourced on <a href="https://github.com/Eden-MB/react-weather-app-shecodes/tree/main/src">GitHub and hosted on Netlify</a></p>
+      </div>)
   }
 }
 
